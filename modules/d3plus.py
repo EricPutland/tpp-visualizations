@@ -3,6 +3,8 @@ import json
 import random
 import pandas as pd
 
+import os
+path = os.path.dirname(__file__)
 
 class D3PlusViz(object):
 
@@ -131,7 +133,7 @@ class Scatterplot(D3PlusViz):
 
 class ProductSpace(D3PlusViz):
 
-    GRAPH_DATA = open("/Users/gregshap/Documents/gittles/tpp-visualizations/classifications/atlas_international_product_space_hs4_codes.json").read()
+    GRAPH_DATA = open(os.path.join(path, "../classifications/atlas_international_product_space_hs4_codes.json")).read()
 
     def __init__(self, id='id', name=None, color=None):
         super(ProductSpace, self).__init__()
